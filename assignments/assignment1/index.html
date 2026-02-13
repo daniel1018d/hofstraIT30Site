@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Semantic HTML Refactor Exercise</title>
+
+  <style>
+    /* Basic layout + visuals so structure is obvious */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+      margin: 0;
+      background: #f5f6f8;
+      color: #222;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Starter file uses divs; students will swap to semantic tags.
+       This CSS is written to still work after refactor. */
+    #header, header {
+      background: #1f2937;
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 10px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    #nav, nav {
+      margin-top: 12px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    /* Inline vs block trap:
+       Links are inline by default; spacing/padding may feel "off" until students improve structure. */
+    #nav a, nav a {
+      text-decoration: none;
+      color: #2563eb;
+      margin-right: 10px;
+    }
+
+    #nav a:hover, nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Two-column layout */
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      align-items: start;
+    }
+
+    #content, main {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    #sidebar, aside {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .post, article {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      background: #fbfbfc;
+    }
+
+    /* Heading styling works whether students convert div titles to h1/h2 */
+    h1 {
+      font-size: 22px;
+      margin: 0 0 6px 0;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 6px 0;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      background: #fbfbfc;
+    }
+
+    #footer, footer {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    /* Make it readable on narrow screens */
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+<!-- I used the <header> here because this is the piece of text at the top of the website, so it should be the biggest. -->
+    <header id="header">
+      <div class="logo"><h1>Hofstra Student Services</h1></div>
+      <div class="tagline">Updates, deadlines, and announcements</div>
+    </header>
+
+    <!-- I used <nav> for this list of links because links are used to connect this page of the website to others. -->
+    <nav id="nav">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Announcements</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+    </nav>
+
+    <div class="layout">
+	<!-- I used <main> for this section of the site because it takes up the majority of the page, so it should be considered the "main" part of the website. -->
+      <main id="content">
+
+        <!-- I used <article> for these two posts because the two of them are different topics, so the two of them should be self contained into two different classes.-->
+        <article class="post">
+          <!-- Students should convert this into headings (h1/h2) and fix hierarchy -->
+          <div class="title"><h2>Registration Reminder</h2></div>
+          <div class="meta">Posted Feb 12</div>
+          <div class="text">
+            Course registration closes Friday. Meet with your advisor if you have holds.
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="title"><h2>Library Workshop<h2></div>
+          <div class="meta">Posted Feb 10</div>
+          <div class="text">
+            A research skills workshop is available this week. Limited seats.
+          </div>
+        </article>
+
+      </div>
+
+      <!-- I used <aside> here on this section because the sidebar is not the main part of the page, and should be relegated to the side.-->
+      <aside id="sidebar">
+
+        <div class="box">
+          <div class="title">Related Links</div>
+          <!-- Students should convert these into a real list -->
+          Advising Hours<br>
+          Academic Calendar<br>
+          IT Help Desk
+        </div>
+
+        <div class="box">
+          <div class="title">Contact</div>
+          Email: studentservices@example.com<br>
+          Phone: (555) 555-5555
+        </div>
+
+      </aside>
+    </div>
+
+    <footer id="footer">
+      © Hofstra University
+    </footer>
+
+  </div>
+</body>
+</html>
