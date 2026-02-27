@@ -1,0 +1,16 @@
+body p {
+color: gray;
+}
+
+p.highlight {
+color: blue;
+}
+
+p.highlight {
+color: green;
+}
+
+#special {
+color: black;
+}
+
