@@ -1,0 +1,29 @@
+.section-box {
+    padding: 8px;
+    border: 1px solid black;
+	background-color: white;
+    margin-bottom: 20px;
+}
+
+body {
+background-color: gray;
+font-family: arial;
+}
+
+h1 {
+font-size: 20;
+margin: 15px;
+}
+
+h2 {
+color: red;
+}
+
+p {
+line-height: 10px;
+}
+
+a {
+color: blue;
+}
+
