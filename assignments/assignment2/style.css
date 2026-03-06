@@ -10,13 +10,26 @@
 	margin: 0 auto;
 }
 
+img {
+position: relative;
+z-index: 10;
+}
+
+#caption {
+position: absolute;	
+z-index: 20;
+}
+
 body {
+padding-top: 100px;
 background-color: gray;
 font-family: sans-serif;
 line-height: 1.6;
 }
 
-h1 {
+header {
+position: fixed;
+top: 0;
 font-size: 20;
 margin: 15px;
 }
