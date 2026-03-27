@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Sandbox</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 600px;
+      margin: 60px auto;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      padding: 0 24px;
+    }
+
+    h1 { font-size: 2rem; margin-bottom: 4px; }
+    p  { font-size: 1.1rem; line-height: 1.7; }
+
+    #result-box {
+      margin-top: 32px;
+      padding: 24px;
+      border: 3px solid #1a1a1a;
+      border-radius: 8px;
+      background: white;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      min-height: 80px;
+    }
+
+    #grade-message {
+      margin-top: 16px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JS Sandbox</h1>
+  <p>Open this file in Sublime Text. Find the TODOs in the script below and make your changes. Save the file, switch to the browser, and hit refresh to see what happens.</p>
+
+  <div id="result-box">Loading...</div>
+  <div id="grade-message"></div>
+
+  <script>
+
+    // ============================================================
+    //  QUICK ORIENTATION
+    //
+    //  JavaScript runs after the HTML loads.
+    //  It can read and rewrite anything on the page.
+    //
+    //  A variable is a named box that holds a value:
+    //    let age = 18;
+    //    let city = "New York";
+    //
+    //  An if/else lets the code make a decision:
+    //    if (age >= 18) {
+    //      // do this
+    //    } else {
+    //      // do that
+    //    }
+    //
+    //  That's all you need for today. Let's go.
+    // ============================================================
+
+
+    // ============================================================
+    //  TODO 1 — Make it yours
+    //
+    //  Three variables are declared below.
+    //  Right now they hold placeholder values.
+    //  Replace them with your own.
+    //
+    //  After each change: save → switch to browser → refresh.
+    //  Something on the page should update.
+    //
+    //  For the color: it accepts any valid CSS color name.
+    //  If you're not sure what counts, just try something —
+    //  worst case nothing changes.
+    // ============================================================
+
+    let studentName   = "Daniel";   // TODO 1a
+    let year          = 3;             // TODO 1b — use 1, 2, 3, or 4
+    let favoriteColor = "green";   // TODO 1c
+
+    // -- you don't need to touch anything below this line for TODO 1 --
+
+    let yearLabel;
+    if      (year === 1) { yearLabel = "Freshman";  }
+    else if (year === 2) { yearLabel = "Sophomore"; }
+    else if (year === 3) { yearLabel = "Junior";    }
+    else if (year === 4) { yearLabel = "Senior";    }
+    else                 { yearLabel = "Unknown year — try a number between 1 and 4"; }
+
+    let box = document.getElementById("result-box");
+    box.textContent             = "Hi, I'm " + studentName + ". I'm a " + yearLabel + ".";
+    box.style.borderColor       = favoriteColor;
+    box.style.backgroundColor   = favoriteColor;
+    box.style.color             = "white";
+
+
+    // ============================================================
+    //  TODO 2 — Fix the grade checker
+    //
+    //  The code below is supposed to look at testScore and
+    //  display the right letter grade. The logic should be:
+    //
+    //    90 or above  →  "A — great work"
+    //    80 or above  →  "B — solid effort"
+    //    70 or above  →  "C — room to grow"
+    //    below 70     →  "needs improvement"
+    //
+    //  Try it as-is first. Refresh the browser and see what
+    //  the page actually shows. Does it match the rules above?
+    //
+    //  Hint: JavaScript reads if/else top to bottom and stops
+    //  at the first condition that is true.
+    // ============================================================
+
+    let testScore = 85;
+
+    let gradeMessage;
+
+    if (testScore >= 90) {
+      gradeMessage = "A — great work";
+    } else if (testScore >= 80) {
+      gradeMessage = "B — solid effort";
+    } else if (testScore >= 70) {
+      gradeMessage = "C — room to grow";
+    } else {
+      gradeMessage = "needs improvement";
+    }
+
+    let messageBox = document.getElementById("grade-message");
+    messageBox.textContent      = "Score: " + testScore + " → " + gradeMessage;
+    messageBox.style.display    = "block";
+    messageBox.style.background = testScore >= 80 ? "#d4edda" : "#fff3cd";
+    messageBox.style.color      = testScore >= 80 ? "#155724" : "#856404";
+
+
+    // ============================================================
+    //  TODO 3 — Stretch
+    //
+    //  Add your own condition below this comment.
+    //  It should check testScore and store something
+    //  in a variable called extraNote.
+    //
+    //  Then add this line to show it on the page:
+    //    messageBox.textContent += "  |  " + extraNote;
+    //
+    //  What the condition checks and what it says is up to you.
+    // ============================================================
+
+	let extraNote;
+	
+	// messageBox.textContent += "  |  " + extraNote;
+ 
+
+
+  </script>
+</body>
+</html>
