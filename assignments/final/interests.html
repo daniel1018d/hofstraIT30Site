@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daniel Seidita - Interests</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-91X2W7Z92J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-91X2W7Z92J');
+</script>
+
+  <style>
+    /* ============================================================
+       These styles are provided for you.
+       You do not need to change them — but you can if you want.
+       ============================================================ */
+
+    #filter-area {
+      margin: 24px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #filter-area label {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    #category-select {
+      padding: 8px 12px;
+      font-size: 1rem;
+      border: 2px solid #0f3460;
+      border-radius: 4px;
+      background: white;
+      cursor: pointer;
+    }
+
+    #results-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .item-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-left: 4px solid #0f3460;
+      border-radius: 6px;
+      padding: 18px 20px;
+      width: calc(50% - 10px);
+      box-sizing: border-box;
+    }
+
+    .item-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: #0f3460;
+    }
+
+    .item-card p {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .item-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: #e8eaf6;
+      color: #0f3460;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    #result-count {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+<h1>Daniel Seidita</h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="work.html">Work</a></li>
+<li><a href="interests.html">Interests</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+  <main>
+
+    <section class="section-box">
+      <h2>My Interests & Projects</h2>
+      <p>Use the dropdown to filter by category.</p>
+
+      <!--
+        The dropdown menu. When the user picks a category,
+        onchange calls the filterItems() function and passes
+        the selected value to it.
+
+        The value="" on the first option means "show everything."
+        The other values must exactly match the categories
+        in your data array below.
+
+        TODO A: Replace the placeholder <option> values and text
+        with your real category names.
+        Add or remove <option> lines to match your data.
+      -->
+      <div id="filter-area">
+        <label for="category-select">Filter by category:</label>
+        <select id="category-select" onchange="filterItems(this.value)">
+          <option value="">All</option>
+          <option value="games">Games</option>  <!-- TODO A — category 1 -->
+          <option value="movies">Movies</option>  <!-- TODO A — category 2 -->
+          <option value="hobbies">Hobbies</option>  <!-- TODO A — category 3 -->
+        </select>
+      </div>
+
+      <!-- This line shows how many items are displayed. JS will update it. -->
+      <p id="result-count"></p>
+
+      <!--
+        This is where your item cards will appear.
+        The renderItems() function will fill it in.
+        Do not put anything inside these tags.
+      -->
+      <div id="results-container"></div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Daniel Seidita</p>
+  </footer>
+
+  <!--
+    Link to your external JavaScript file.
+    This must be at the BOTTOM of the body — after all the HTML above.
+    If you put it in the <head>, the script runs before the page
+    elements exist and getElementById will return null.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>
