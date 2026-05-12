@@ -157,7 +157,7 @@ function renderItems(list) {
   //  TODO 4b: Fill in the three property accesses inside innerHTML
   //  TODO 4c: Fill in the appendChild call
 
-  for (let i = 0; i < list.length - 1; i++) {  // TODO 4a — what is the length of?
+  for (let i = 0; i < list.length; i++) {  // TODO 4a — what is the length of?
 
     const card = document.createElement("div");
     card.className = "item-card";
@@ -171,7 +171,7 @@ function renderItems(list) {
       "<p>"  + list[i].description + "</p>" +              // TODO 4b — which property is the description?
       "<span class='item-tag'>" + list[i].category + "</span>";  // TODO 4b — which property is the label?
 
-    container.innerHTML.appendChild(card);  // TODO 4c — which variable is the container?
+    container.appendChild(card);  // TODO 4c — which variable is the container?
   }
 
 
